@@ -129,7 +129,7 @@ fr:
   agents:
     public_services:
       index:
-        heading: Liste d'acteurs à Reims
+        heading: "Liste d'acteurs à %{rhizome}"
         new: Ajouter un nouvel acteur
         show: Afficher
         edit: Modifier
@@ -150,7 +150,7 @@ fr:
 
     service_offerings:
       index:
-        heading: Liste des offres de service à Reims
+        heading: 'Liste des offres de service à %{rhizome}'
         new: Ajouter une nouvelle offre de service
         show: Afficher
         edit: Modifier
@@ -171,7 +171,7 @@ fr:
 
     measures:
       index:
-        heading: Liste des dispositifs à Reims
+        heading: 'Liste des dispositifs à %{rhizome}'
         new: Ajouter un nouveau dispositif
         show: Afficher
         edit: Modifier
@@ -189,3 +189,7 @@ fr:
         update: Modifier
         show: Afficher
         back: Annuler
+
+  rhizomes:
+    reims: Reims
+    coeuressonne: Cœur d'Essonne
