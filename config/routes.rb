@@ -32,7 +32,9 @@ Rails.application.routes.draw do
 
   mount(Flip::Engine => '/flip')
 
-  get '/:flyer', to: 'visitors#index', constraints: { flyer: /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/ }
+  constraints(flyer: /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/) do
+    get '/:flyer', to: 'visitors#index', constraints: ->(_) { ENV['RHIZOME'] =~ /reims/ }
+  end
 
   root to: 'visitors#index'
 end

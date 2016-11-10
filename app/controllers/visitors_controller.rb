@@ -3,8 +3,13 @@
 
 class VisitorsController < ApplicationController
   # Flyers
-  before_action :set_cookie_flip, only: :index, if: -> { request.fullpath =~ /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/ }
-  before_action :unset_cookie_flip, only: :index, unless: -> { request.fullpath =~ /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/ }
+  before_action :set_cookie_flip, only: :index, if: lambda {
+    ENV['RHIZOME'] =~ /reims/ && request.fullpath =~ /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/
+  }
+
+  before_action :unset_cookie_flip, only: :index, unless: lambda {
+    ENV['RHIZOME'] =~ /reims/ && request.fullpath =~ /reims1[A|B|C|D|E|F|G|H|J|K|L|N]/
+  }
 
   # Tracking
   after_action :track_visits_landing, only: :index

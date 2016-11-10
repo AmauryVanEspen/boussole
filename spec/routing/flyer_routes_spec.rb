@@ -2,6 +2,8 @@
 # frozen_string_literal: true
 
 RSpec.describe 'Flyer Routes', type: :routing do
+  before { allow(ENV).to receive(:[]).with('RHIZOME').and_return('reims') }
+
   context 'valid routes' do
     it { expect(get: '/reims1A').to route_to(controller: 'visitors', action: 'index', flyer: 'reims1A') }
     it { expect(get: '/reims1B').to route_to(controller: 'visitors', action: 'index', flyer: 'reims1B') }
