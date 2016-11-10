@@ -4,9 +4,9 @@ test:
     - bower prune
 
   post:
-    - bundle exec rake haml_lint
-    - bundle exec yaml-lint config/data config/rules
-    - bundle exec rake inch
+    - rake haml_lint
+    - bundle exec yaml-lint config/data config/criterias
+    - rake inch
 
 deployment:
   reims:
