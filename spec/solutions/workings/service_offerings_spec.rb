@@ -15,7 +15,7 @@ situation %(
 
   background do
     Working::ServiceOfferings.send(:remove_const, 'CRITERIAS_PATH')
-    Working::ServiceOfferings.const_set('CRITERIAS_PATH', 'spec/fixtures/criterias/working.service_offerings.yml')
+    Working::ServiceOfferings.const_set('CRITERIAS_PATH', -> { 'spec/fixtures/criterias/working.service_offerings.yml' })
     create(:feature, :working)
   end
 
